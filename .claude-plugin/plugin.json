@@ -1,0 +1,21 @@
+{
+  "name": "unslop-pl-en",
+  "description": "Polish and English writing guardrail: removes AI-slop patterns, Polish calques and typography errors, and checks translations PL<->EN against a fact ledger.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Rafał Kawęcki",
+    "url": "https://github.com/r4vk"
+  },
+  "homepage": "https://github.com/r4vk/unslop-pl-en",
+  "repository": "https://github.com/r4vk/unslop-pl-en",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "editing",
+    "polish",
+    "english",
+    "translation",
+    "ai-slop",
+    "style"
+  ]
+}

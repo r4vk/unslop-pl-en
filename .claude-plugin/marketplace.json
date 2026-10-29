@@ -1,0 +1,26 @@
+{
+  "$schema": "https://code.claude.com/schemas/marketplace.json",
+  "name": "unslop-pl-en",
+  "owner": {
+    "name": "Rafał Kawęcki",
+    "url": "https://github.com/r4vk"
+  },
+  "description": "Writing skills for Polish and English: anti-AI-slop editing and faithful PL<->EN translation.",
+  "plugins": [
+    {
+      "name": "unslop-pl-en",
+      "description": "Polish and English writing guardrail: removes AI-slop patterns, Polish calques and typography errors, and checks translations PL<->EN against a fact ledger.",
+      "version": "0.1.0",
+      "source": "./",
+      "author": {
+        "name": "Rafał Kawęcki",
+        "url": "https://github.com/r4vk"
+      },
+      "homepage": "https://github.com/r4vk/unslop-pl-en",
+      "repository": "https://github.com/r4vk/unslop-pl-en",
+      "license": "MIT",
+      "category": "productivity",
+      "keywords": ["writing", "editing", "polish", "english", "translation", "ai-slop", "style"]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Manifests are valid JSON and versions agree
+        run: |
+          python3 - <<'EOF'
+          import json
+          plugin = json.load(open(".claude-plugin/plugin.json"))
+          market = json.load(open(".claude-plugin/marketplace.json"))
+          entry = next(p for p in market["plugins"] if p["name"] == plugin["name"])
+          assert plugin["version"] == entry["version"], (plugin["version"], entry["version"])
+          print("version", plugin["version"])
+          EOF
+      - name: SKILL.md frontmatter
+        run: |
+          python3 - <<'EOF'
+          import re
+          t = open("skills/unslop-pl-en/SKILL.md", encoding="utf-8").read()
+          m = re.match(r"---\nname: ([a-z0-9-]+)\ndescription: (.+)\n---\n", t)
+          assert m, "frontmatter missing or malformed"
+          assert m.group(1) == "unslop-pl-en"
+          assert len(m.group(2)) <= 1024, len(m.group(2))
+          EOF
+      - name: Linter tests
+        run: python3 -I -m unittest discover -s tests -v
