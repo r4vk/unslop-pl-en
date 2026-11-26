@@ -1,5 +1,16 @@
 # unslop-pl-en
 
+> [!IMPORTANT]
+> **This plugin has moved to [r4vk/r4vk-skills](https://github.com/r4vk/r4vk-skills).** New versions are released there. The install instructions below describe the old marketplace. To switch, follow these steps in Claude Code:
+>
+> 1. `/plugin marketplace add r4vk/r4vk-skills`
+> 2. `/plugin marketplace remove unslop-pl-en`
+> 3. `/plugin install unslop-pl-en@r4vk-skills`
+>
+> If you added the skill manually (a `.skill` file or `~/.claude/skills/`), remove that copy too.
+>
+> *Plugin przeniesiono do [r4vk/r4vk-skills](https://github.com/r4vk/r4vk-skills). Nowe wersje będą wydawane tam. Instrukcja instalacji poniżej dotyczy starego marketplace.*
+
 A Claude skill that keeps Polish and English text from reading as AI-generated, and keeps translations between the two faithful.
 
 *Skill dla Claude, który pilnuje, żeby polskie i angielskie teksty nie brzmiały jak wygenerowane przez AI, a tłumaczenia PL<->EN zachowywały treść.*
